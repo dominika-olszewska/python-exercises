@@ -50,9 +50,11 @@ text2=' w tablicy'
 print('{}'.format(minNr)+text1+'{}'.format(minIndex)+text2)
 
 print('-'*20)
+
 '''
 
 #TASK 4
+
 
 
 
