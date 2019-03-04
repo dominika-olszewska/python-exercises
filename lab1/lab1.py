@@ -31,7 +31,7 @@ def factorial(x):
 
 print(factorial(x))
 print('-'*20)
-
+'''
 
 #TASK 3
 
@@ -49,12 +49,19 @@ text2=' w tablicy'
 
 print('{}'.format(minNr)+text1+'{}'.format(minIndex)+text2)
 
+#print(min(myArr))
+#print(myArr.index(min(myArr)))
+
 print('-'*20)
 
-'''
+
 
 #TASK 4
 
 
+from matplotlib.pyplot import *
+
+plot([1,2,3,2,3,4,3,4,5])
+show()
 
 
