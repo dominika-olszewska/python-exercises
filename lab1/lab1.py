@@ -1,3 +1,6 @@
+from matplotlib.pyplot import *
+from numpy import *
+
 #TASKS (4p)
 #1 calculate & print the value of function y = 2x^2 + 2x + 2 for x=[56, 57, ... 100] (0.5p)
 #2 ask the user for a number and print its factorial (1p)
@@ -8,60 +11,67 @@
 #5 upload the solution as a Github repository. I suggest creating a directory for the whole python course and subdirectories lab1, lab2 etc. (0.5p)
 
 '''
-#TASK 1
+# TASK 1
 
 def equation(x):    
-    return (2 * x) ** 2 + 2 * x + 2
+    return 2 * x
 
-for i in range (56,100):
+
+for i in range(56, 101):
     print(equation(i))
 
 print('-'*20)
 
-#TASK 2
+# TASK 2
 
-print('Insert your value here which ia a natural number:')
-x = int(input())
+x = int(input('Insert your value here which ia a natural number:'))
+
 
 def factorial(x):
-    if(x<2):
+
+    if x in range(0,2):
         return 1
-    else:
+    elif x>2:
         return x*factorial(x-1)
+    else:
+        return 'Error'
+
 
 print(factorial(x))
+
 print('-'*20)
 '''
+# TASK 3
 
-#TASK 3
-
-myArr=[8,4,3,6,54,2]
-minNr=myArr[0]
-minIndex=0
+myArr = [8, 4, 3, 6, 2, 54, 2, 2]
+minNr = myArr[0]
+minIndexPosition = []
 
 for i in range(0, len(myArr)):
-    if myArr[i]<minNr:
-        minNr=myArr[i]
-        minIndex=i
 
-text1=' znajduje się na pozycji '
-text2=' w tablicy'
+    if myArr[i] < minNr:
+        minNr = myArr[i]
 
-print('{}'.format(minNr)+text1+'{}'.format(minIndex)+text2)
 
-#print(min(myArr))
-#print(myArr.index(min(myArr)))
+for i in range(0, len(myArr)):
+
+    if myArr[i] == minNr:
+        minIndexPosition.append(i)
+
+
+if len(minIndexPosition) == 1:
+    print('There is one minimum found: number', minNr)
+else:
+    print('There are found', len(minIndexPosition), 'minimums on positions', minIndexPosition, 'in the array')
+
 
 print('-'*20)
 
+# TASK 4
 
+a = int(input(f"Choose the length of chart:"))
 
-#TASK 4
-
-
-from matplotlib.pyplot import *
-
-plot([1,2,3,2,3,4,3,4,5])
+x = linspace(0, a, 50)
+y = 2*x**2
+plot(x, y)
 show()
-
-

@@ -10,7 +10,7 @@
 #6 Test your code. Check various edge cases. In other words: does your program (1, 3, 4 & 5)work for all input values?
 # In case of task 4  do not forget to round to different amount of decimals and see if it still works.(3p)
 
-
+'''
 #TASK 0
 
 from cs50 import get_int
@@ -23,9 +23,8 @@ print('-'*20)
 
 import math
 
-# perim=2piR
-# field=piR^2
-'''
+
+
 perimeterOfCircle1=2*math.pi*x
 perimeterOfCircle2=2*math.pi*y
 
@@ -33,7 +32,7 @@ fieldOfCirlce1=math.pi*math.pow(x,2)
 fieldOfCirlce1=math.pi*math.pow(y,2)
 
 print(perimeterOfCircle1, fieldOfCirlce1)
-'''
+
 
 
 class Circle:
@@ -43,7 +42,7 @@ class Circle:
     def perimeter_circle(self):
         print(2 * math.pi * self.R)
 
-    def field_cirlce(self):
+    def field_circle(self):
         print(math.pi*math.pow(self.R, 2))
 
 
@@ -52,7 +51,7 @@ circle2 = Circle(y)
 
 circle1.perimeter_circle()
 
-
+'''
 print('-' * 20)
 
 
@@ -63,4 +62,10 @@ print('-' * 20)
 #TASK 4
 
 #TASK 5
+
+
+
+
+
+
 
