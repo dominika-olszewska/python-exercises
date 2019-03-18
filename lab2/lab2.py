@@ -1,6 +1,9 @@
 from cs50 import get_int
 import math
 from decimal import Decimal
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 # TASKS (8p)- calculate & print:
 
@@ -25,7 +28,7 @@ x = get_int("x: ")
 y = get_int("y: ")
 
 print('-'*20)
-
+'''
 # TASK 1
 
 # perimeterOfCircle1 = 2*math.pi * x
@@ -98,8 +101,17 @@ print('-'*20)
 
 
 '''
+
 # TASK 5
-'''
+
+x_knots = np.linspace(x, y, 300)
+y_knots = np.linspace(x, y, 300)
+X, Y = np.meshgrid(x_knots, y_knots)
+R = np.sqrt(X**2+Y**2)
+Z = np.cos(R)**2*np.exp(-0.3*R)
+ax = Axes3D(plt.figure(figsize=(8, 5)))
+ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=plt.cm.coolwarm, linewidth=0.4)
+plt.show()
 
 
 
