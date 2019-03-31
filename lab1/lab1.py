@@ -65,6 +65,7 @@ print('-' * 20)
 
 # TASK 4
 
+
 def chart(a):
     x = linspace(-5, a, 5)
     y = 2 * x ** 2

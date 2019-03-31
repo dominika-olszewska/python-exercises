@@ -45,13 +45,13 @@ class Circle:
         self.radius = radius
 
     def perimeter_circle(self):
-        if self.radius > 0:
+        if self.radius >= 0:
             print('Perimeter od this circle equals:', 2 * math.pi * self.radius)
         elif self.radius < 0:
             print('Radius can\'t be negative ')
 
     def field_circle(self):
-        if self.radius > 0:
+        if self.radius >= 0:
             print('Field od this circle equals:', math.pi*math.pow(self.radius, 2))
         elif self.radius < 0:
             print('Radius can\'t be negative ')
@@ -73,35 +73,41 @@ print('-' * 20)
 
 # TASK 2
 
-if x % y == 0 and x % 2 == 0 and y % 2 == 0:
-    print('These numbers sadisfy requirements')
-else:
-    print('Find other numbers')
+try:
+    if x % y == 0 and x % 2 == 0 and y % 2 == 0:
+        print('These numbers sadisfy requirements')
+except ZeroDivisionError:
+    print("division by zero!")
+finally:
+    print("Find other numbers")
 
 
 print('-'*20)
+
 
 # TASK 3
-
-isDivisibleByY = x % y == 0
-print('X is divisible by Y') if isDivisibleByY else print('X is not divisible by Y')
-
-
-print('-'*20)
-
-# TASK 4
-
-convertToDecimal = Decimal(x/y)
-
-output = round(convertToDecimal, 2)
-print(output)
+try:
+    print('X is divisible by Y') if x % y == 0 else print('X is not divisible by Y')
+        
+except ZeroDivisionError:
+    print("division by zero!")
 
 
 print('-'*20)
-
 
 '''
+# TASK 4
 
+try:
+    convertToDecimal = Decimal(x / y)
+    output = round(convertToDecimal, 4)
+    print(output)
+except ZeroDivisionError:
+    print("division by zero!")
+
+
+print('-'*20)
+'''
 # TASK 5
 
 x_knots = np.linspace(x, y, 300)
@@ -113,8 +119,7 @@ ax = Axes3D(plt.figure(figsize=(8, 5)))
 ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=plt.cm.coolwarm, linewidth=0.4)
 plt.show()
 
-
-
+'''
 
 
 
