@@ -1,5 +1,5 @@
 import math
-
+from decimal import Decimal
 # 1 Write a function countField which calculates the field of a given figure. It takes the following input parameters:
 # - type: circle/rectangle/triangle/rhombus
 # - x & optional y.
@@ -13,62 +13,40 @@ import math
 
 # TASK 1
 
-# zabezpiecz prze 0 i ujemnymi
 
-
-def count_field(figure_type, x, y):
-    if figure_type == 'circle' and x > 0 and y > 0:
-        print(math.pi * x ** 2)
+def count_field(figure_type, x, y=0):
+    text = 'Calculated field of given '
+    text2 = ' is '
+    if figure_type == 'circle' and x > 0:
+        convertToDecimal = Decimal(math.pi * x ** 2)
+        calculated_field = round(convertToDecimal, 2)
+        result = text + str(figure_type) + text2 + str(calculated_field)
+        return result
     elif figure_type == 'rectangle' and x > 0 and y > 0:
-        print(x * y)
+        calculated_field = x * y
+        result = text + str(figure_type) + text2 + str(calculated_field)
+        return result
     elif figure_type == 'triangle' and x > 0 and y > 0:
-        print(0.5 * x * y)
+        calculated_field = 0.5 * x * y
+        result = text + str(figure_type) + text2 + str(calculated_field)
+        return result
     elif figure_type == 'rhombus' and x > 0 and y > 0:
-        print(0.5 * x * y)
+        calculated_field = 0.5 * x * y
+        result = text + str(figure_type) + text2 + str(calculated_field)
+        return result
     else:
-        print('Write another values')
+        result = 'Write another values'
+        return result
 
 
-# Circle = count_field('circle', 1, 2) ????
+circle = count_field('circle', 1)
+rectangle = count_field('rectangle', 1, 5)
+triangle = count_field('triangle', 3, 2)
+rhombus = count_field('rhombus', 1, 2)
 
-# Circle() ????/
+print(circle)
+print(rectangle)
+print(triangle)
+print(rhombus)
 
-count_field('rectangle', 3, 4)
-
-count_field('rhombus', -1, 4)
-
-
-# TASK 2
-
-
-
-# def compare():
-
-
-'''
-try:
-    convertToDecimal = Decimal(x / y)
-    output = round(convertToDecimal, 4)
-    print(output)
-except ZeroDivisionError:
-    print("division by zero!")
-
-'''
-'''
-class SampleClass1:
-
-    def __init__(self, a):
-        self.set_a(a)
-
-    def get_a(self):
-        return self.__a
-
-    def set_a(self, a):
-
-        if a > 0 and a % 2 == 0:
-            self.__a = a
-        else:
-            self.__a = 2
-
-'''
 print('-'*20)
