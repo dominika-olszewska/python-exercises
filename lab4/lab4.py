@@ -158,10 +158,3 @@ show()
 # Measure the success / total trials rate (2p).
 
 
-# TASK 1
-# parameters
-T = 5
-h = 0.1
-
-# x' = ax
-#a = 1

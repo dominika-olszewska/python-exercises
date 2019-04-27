@@ -33,7 +33,7 @@ try:
     Euler(1, 5, 0.1)
 
 except TypeError as e:
-        print(e)
+    print(e)
 
 except AttributeError as e:
-        print(e)
+    print(e)
