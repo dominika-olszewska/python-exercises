@@ -23,7 +23,7 @@ def Euler(a, T, h):
     for i in range(t.size - 1):
         x[i + 1] = x[i] + h * (a * x[i])
 
-    plt.plot(t, x, 'o')
+    plt.plot(t, x, 'g')
     plt.xlabel('t', fontsize=14)
     plt.ylabel('x', fontsize=14)
     plt.show()
