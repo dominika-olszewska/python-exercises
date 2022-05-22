@@ -1,2 +1,2 @@
 # python-course
-Exercises made during studies involving using python
+Exercises made during master studies involving using python
